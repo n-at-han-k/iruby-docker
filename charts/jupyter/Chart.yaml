@@ -1,5 +1,5 @@
 apiVersion: v2
-name: iruby
+name: iruby-docker-helm
 description: IRuby Jupyter Notebook
 type: application
 version: 1.0.0
