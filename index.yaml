@@ -11,4 +11,15 @@ entries:
     urls:
     - https://github.com/n-at-han-k/iruby-docker/releases/download/iruby-1.0.0/iruby-1.0.0.tgz
     version: 1.0.0
-generated: "2026-01-09T09:19:33.954653633Z"
+  iruby-docker-helm:
+  - apiVersion: v2
+    appVersion: latest
+    created: "2026-01-09T09:24:22.948550607Z"
+    description: IRuby Jupyter Notebook
+    digest: 88499eee6c0ae6766ee93b27eb98eec337356ccfb45bfb603c84c4c78f01148d
+    name: iruby-docker-helm
+    type: application
+    urls:
+    - https://github.com/n-at-han-k/iruby-docker/releases/download/iruby-docker-helm-1.0.0/iruby-docker-helm-1.0.0.tgz
+    version: 1.0.0
+generated: "2026-01-09T09:24:22.948556398Z"
