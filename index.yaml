@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  iruby:
+  - apiVersion: v2
+    appVersion: latest
+    created: "2026-01-09T09:19:33.954647702Z"
+    description: IRuby Jupyter Notebook
+    digest: b03de73728d37eab93a655e3debd23d6bd028f4bcc374465e1bb43f6a1bce754
+    name: iruby
+    type: application
+    urls:
+    - https://github.com/n-at-han-k/iruby-docker/releases/download/iruby-1.0.0/iruby-1.0.0.tgz
+    version: 1.0.0
+generated: "2026-01-09T09:19:33.954653633Z"
