@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "jupyter.fullname" . }}
+  labels:
+    {{- include "jupyter.labels" . | nindent 4 }}
+spec:
+  selector:
+    {{- include "jupyter.selectorLabels" . | nindent 4 }}
+  ports:
+    - port: 8888

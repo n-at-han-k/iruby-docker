@@ -1,0 +1,15 @@
+image:
+  repository: ghcr.io/n-at-han-k/iruby-docker
+  tag: latest
+  pullPolicy: IfNotPresent
+
+token: changeme
+
+ingress:
+  enabled: true
+  host: jupyter.example.com
+
+persistence:
+  enabled: false
+  size: 1Gi
+  storageClass: ""
