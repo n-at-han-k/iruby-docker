@@ -3,8 +3,7 @@ name: Release Charts
 on:
   push:
     branches: [main]
-    paths:
-      - 'charts/**'
+
   workflow_dispatch:
 
 jobs:
@@ -21,30 +20,12 @@ jobs:
 
       - name: Configure Git
         run: |
-          git config user.name "$GITHUB_ACTOR"
-          git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
 
       - uses: azure/setup-helm@v4
 
-      - name: Package charts
-        run: |
-          mkdir -p .helm-releases
-          helm package charts/jupyter -d .helm-releases
-
-      - name: Checkout gh-pages
-        uses: actions/checkout@v4
-        with:
-          ref: gh-pages
-          path: gh-pages
-
-      - name: Update repo
-        run: |
-          cp .helm-releases/*.tgz gh-pages/
-          helm repo index gh-pages --url https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
-
-      - name: Push to gh-pages
-        run: |
-          cd gh-pages
-          git add .
-          git commit -m "Release charts" || exit 0
-          git push
+      - name: Run chart-releaser
+        uses: helm/chart-releaser-action@v1.6.0
+        env:
+          CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
